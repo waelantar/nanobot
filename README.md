@@ -56,6 +56,7 @@
 
 ## 📢 News
 
+- **2026-06-20** 💬 Telegram rich messages, safer SDK concurrency, smoother Quick Start.
 - **2026-06-19** 🔎 Firecrawl app, OpenAI image edits, safer session deletion.
 - **2026-06-18** 💬 Feishu recovery, Keenable search, Mistral polish, workspace-aware git.
 - **2026-06-17** 🧠 Default idle auto-compact, clearer `/dream`, macOS installer fixes.
@@ -65,11 +66,11 @@
 - **2026-06-13** 🗓️ Session-bound automations, sturdier WhatsApp, faster WebUI startup.
 - **2026-06-12** 💬 Slack allowlisted channels can require mentions.
 - **2026-06-11** ✂️ Fenced-code message splitting.
-- **2026-06-10** 📜 Segmented transcripts, Exa/Bocha search, StepFun/SiliconFlow ASR.
 
 <details>
 <summary>Earlier news</summary>
 
+- **2026-06-10** 📜 Segmented transcripts, Exa/Bocha search, StepFun/SiliconFlow ASR.
 - **2026-06-09** 🎙️ Shared voice input, more STT providers, TeX and email polish.
 - **2026-06-08** 🧮 Token heatmap fix, safer MCP HTTP probing, docs cleanup.
 - **2026-06-06** 🧰 SDK MCP cleanup, removable OpenAI image defaults.
@@ -329,7 +330,7 @@ The example below uses a generic OpenAI-compatible `custom` provider so the comp
       "provider": "custom",
       "model": "model-id-from-your-provider",
       "maxTokens": 8192,
-      "contextWindowTokens": 65536,
+      "contextWindowTokens": 200000,
       "temperature": 0.1
     }
   },
@@ -362,6 +363,7 @@ nanobot gateway
 ```
 
 Leave that terminal open, then open `http://127.0.0.1:8765` in your browser. Enter the WebUI password you set in the wizard, then send your first message there.
+Prefer not to keep a terminal open? Use `nanobot gateway --background`, then manage it with `nanobot gateway status`, `logs`, `restart`, and `stop`.
 
 For manual or terminal-only setup, test one CLI message:
 
@@ -416,6 +418,8 @@ Merge this block into your existing config:
 ```bash
 nanobot gateway
 ```
+
+Use `nanobot gateway --background` for a local background process you can manage later with `nanobot gateway status`, `logs`, `restart`, and `stop`.
 
 **3. Open the WebUI**
 
